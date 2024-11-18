@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #253525, #61fb70);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddfcac;
+    overflow: hidden;
+}
+
+.welcome {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    margin: 0;
+    animation: slideIn 2s ease-in-out;
+}
+
+.welcome-title .highlight {
+    color: #21f12b;
+    animation: colorPulse 3s infinite;
+}
+
+.welcome-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes colorPulse {
+    0% { color: #21f136; }
+    50% { color: #ffffff; }
+    100% { color: #5ff121; }
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ddfcac;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #5ff121;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .nav-links li {
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .welcome-title {
+        font-size: 1.8rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}

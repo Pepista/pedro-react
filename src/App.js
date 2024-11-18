@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+// App.js
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import AboutPage from './AboutPage';  // Importuj AboutPage
+import ProjectsPage from './ProjectsPage';  // Importuj ProjectsPage
+import ContactPage from './ContactPage';  // Importuj ContactPage
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router> {/* Obalíme celou aplikaci v Router */}
+      <div className="App">
+        <div className="content">
+          <Routes>  {/* Definujeme cesty */}
+            <Route path="/" element={<Home />} /> {/* Hlavní stránka */}
+            <Route path="/about" element={<AboutPage />} /> {/* O mně stránka */}
+            <Route path="/projekty" element={<ProjectsPage />} /> {/* Projekty stránka */}
+            <Route path="/contact" element={<ContactPage />} /> {/* Kontakt stránka */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

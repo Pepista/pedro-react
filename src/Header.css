@@ -1,0 +1,158 @@
+/* Obecné styly */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 80px; /* Rezerva pro pevný header */
+    transition: background-color 0.3s ease; /* Přechod pro pozadí těla při scrollování */
+}
+
+/* Header styly */
+.header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixace headeru */
+    top: 0;
+    left: 0;
+    width: 100%; /* Header bude přes celou šířku obrazovky */
+    z-index: 1000;
+    transition: all 0.3s ease; /* Animace pro header */
+}
+
+/* Efekt změny pro header při scrollování */
+.header.scrolled {
+    background-color: #1e2820; /* Změna barvy pozadí při scrollování */
+    padding: 10px 0; /* Zmenšení výšky */
+    box-shadow: 0 2px 4px rgba(3, 67, 18, 0.2); /* Tmavší stín */
+}
+
+/* Kontejner */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Název webu */
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+    transition: font-size 0.3s ease; /* Změna velikosti písma při scrollování */
+}
+
+.header.scrolled h1 {
+    font-size: 2rem; /* Zmenšení fontu při scrollování */
+}
+
+/* Navigace */
+.nav {
+    display: flex;
+    transition: transform 0.3s ease; /* Efekt pro navigační lištu */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #dadada;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #37b04d;
+    text-decoration: underline;
+    transform: scale(1.1); /* Animace zvětšení odkazu při hover */
+}
+
+/* Efekt pro zmizení a animace při scrollování */
+.nav-links a:focus {
+    transform: scale(1.2); /* Zvýraznění odkazu při fokusování */
+}
+
+/* Zajištění správného scrollování, pokud je obsah vyšší než obrazovka */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Zakáže horizontální scrollování */
+    overflow-y: auto;  /* Povolení vertikálního scrollování */
+}
+
+/* Responzivní úpravy */
+
+/* Tablet a menší zařízení (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Zvětšení šířky kontejneru pro menší obrazovky */
+        flex-direction: column; /* Změna z horizontálního uspořádání na vertikální */
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 2rem; /* Zmenšení fontu pro nadpis */
+    }
+
+    .nav {
+        flex-direction: column; /* Navigace se změní na vertikální */
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Větší mezery mezi odkazy */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem; /* Zvětšení písma pro odkazy */
+    }
+}
+
+/* Mobilní telefony (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 20px; /* Padding pro mobilní zařízení */
+    }
+
+    .header h1 {
+        font-size: 1.8rem; /* Zmenšení fontu pro nadpis */
+    }
+
+    .nav-links a {
+        font-size: 1.1rem; /* Zmenšení písma pro odkazy */
+    }
+
+    .header {
+        padding: 15px 0; /* Zmenšení paddingu headeru na mobilech */
+    }
+
+    .nav-links li {
+        margin: 8px 0; /* Zmenšení mezer mezi odkazy */
+    }
+}
+
+/* Extra malá zařízení (max-width: 320px) */
+@media (max-width: 320px) {
+    .header h1 {
+        font-size: 1.5rem; /* Další zmenšení fontu pro extra malé obrazovky */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Menší písmo pro odkazy */
+    }
+}
