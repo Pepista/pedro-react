@@ -9,7 +9,7 @@ const ContactPage = () => {
         <Header />
         <div className="contact-header">
           <h1>Kontakt</h1>
-          <p>Rád se s tebou spojím! Tady jsou různé způsoby, jak mě můžeš kontaktovat:</p>
+          <p>Rád se s tebou spojím!! Tady jsou různé způsoby, jak mě můžeš kontaktovat:</p>
         </div>
 
         <div className="contact-method">
