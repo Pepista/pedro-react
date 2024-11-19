@@ -8,8 +8,9 @@ const Header = () => {
                 <h1>Pedro Joestar</h1>
                 <nav className="nav">
         <ul className="nav-links">
-          {/* Používáme Link místo <a> */}
+          
           <li><Link to="/">Domů</Link></li>
+          <li><Link to="/About">O mně</Link></li>
           <li><Link to="/Projekty">Projekty</Link></li>
           <li><Link to="/contact">Kontakt</Link></li>
         </ul>

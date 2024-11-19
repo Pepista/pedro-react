@@ -1,7 +1,10 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #253525, #61fb70);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #101210, #112e14);
     height: 100vh;
     display: flex;
     justify-content: center;

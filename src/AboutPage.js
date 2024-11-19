@@ -1,6 +1,7 @@
 // AboutPage.js
 import React from 'react';
 import Header from './Header';
+import './AboutPage.css';
 
 const AboutPage = () => {
     return (
