@@ -6,13 +6,15 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #101210, #112e14);
     height: 100vh;
+    color: #ddfcac;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ddfcac;
-    overflow: hidden;
+    flex-direction: column;
+    overflow: hidden; /* Zabráni jakýmkoli posuvníkům */
 }
 
+/* Třída pro hlavní text - animace */
 .welcome {
     text-align: center;
     animation: fadeIn 2s ease-in-out;
@@ -52,11 +54,15 @@ body {
     100% { color: #5ff121; }
 }
 
+/* Navigace: zůstane nad obsahem */
 .nav {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     flex-wrap: wrap;
+    z-index: 10; /* Zajistí, že odkazy budou vždy nad obsahem */
+    width: 100%; /* Ujistíme se, že navigace bude zabírat celou šířku */
+    box-sizing: border-box;
 }
 
 .nav-links {
@@ -66,6 +72,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-links li {
@@ -84,6 +92,7 @@ body {
     text-decoration: underline;
 }
 
+/* Responzivita */
 @media (max-width: 768px) {
     .welcome-title {
         font-size: 2.5rem;
@@ -95,13 +104,22 @@ body {
 
     .nav {
         flex-direction: column;
+        align-items: center; /* Zarovná odkazy na střed */
+        width: 100%; /* Zajistí, že navigace nebude zúžená */
+        box-sizing: border-box;
+    }
+
+    .nav-links {
+        justify-content: center;
+        width: auto; /* Zajistí, že odkazy nezaberou celou šířku */
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 10px 0; /* Zvýšení mezery mezi odkazy na mobilních zařízeních */
     }
 }
 
+/* Pro ještě menší zařízení */
 @media (max-width: 480px) {
     .welcome-title {
         font-size: 2rem;
@@ -116,10 +134,22 @@ body {
     }
 
     .nav-links li {
-        margin: 8px 0;
+        margin: 12px 0; /* Mírné zmenšení mezery pro menší mobilní obrazovky */
+    }
+
+    .nav {
+        margin-top: 20px;
     }
 }
 
+/* Pokud máte "about" a "contacts", můžete přidat větší mezeru mezi těmito odkazy */
+@media (max-width: 768px) {
+    .nav-links li:nth-child(1) {
+        margin-right: 20px; /* Zvětší mezeru mezi "about" a dalším odkazem */
+    }
+}
+
+/* Pro nejmenší zařízení */
 @media (max-width: 320px) {
     .welcome-title {
         font-size: 1.8rem;
@@ -132,4 +162,28 @@ body {
     .nav-links a {
         font-size: 0.9rem;
     }
+
+    .nav-links li {
+        margin: 10px 0; /* Menší mezera pro velmi malá zařízení */
+    }
+}
+
+/* Úprava pro galerie obrázků */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-image {
+    width: 35px; /* Nastaví velikost obrázků */
+    height: auto;
+    border-radius: 0%; /* Udělá obrázky kruhové */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
 }

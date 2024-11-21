@@ -1,0 +1,97 @@
+/* AboutPage.css */
+.about-page {
+    font-family: 'Arial', sans-serif;
+    padding-top: 100px; /* Zajištění rezervy pro fixní header */
+    padding-bottom: 50px; /* Padding pro spodní část stránky */
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.about-content {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 600px;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Styly pro obrázek */
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.about-image img {
+    width: 350px; /* Zvýšení velikosti obrázku */
+    height: 500px; /* Fixní výška pro válcový tvar */
+    object-fit: cover; /* Oříznutí obrázku tak, aby se vešel do válce */
+    border-radius: 20px; /* Zaoblení rohů pro válcový efekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mírný stín kolem obrázku */
+}
+
+/* Responzivní úpravy */
+
+/* Tablet a menší zařízení (max-width: 768px) */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px; /* Ujistíme se, že je mezera mezi textem a vrchem obrazovky */
+    }
+
+    .about-content {
+        text-align: center;
+        padding-right: 0;
+        margin-top: 20px; /* Zajištění odsazení pro text */
+    }
+
+    .about-image {
+        margin-top: 20px;
+        max-width: 400px; /* Zmenšení velikosti obrázku */
+    }
+}
+
+/* Mobilní telefony (max-width: 480px) */
+@media (max-width: 480px) {
+    .about-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .about-image {
+        max-width: 300px; /* Ještě menší obrázek */
+        margin-top: 40px; /* Větší mezera mezi textem a obrázkem */
+    }
+
+    /* Ujistíme se, že text nebude příliš u okraje */
+    .about-container {
+        padding: 0 20px; /* Padding pro mobilní zařízení */
+        margin-top: 400px;
+    }
+}

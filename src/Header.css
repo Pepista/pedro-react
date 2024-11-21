@@ -9,8 +9,7 @@ body {
 
 /* Header styly */
 .header {
-    background-color: #282c34;
-    color: white;
+    background-color: #28342b;
     padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fixace headeru */
@@ -44,6 +43,7 @@ body {
     margin: 0;
     font-weight: bold;
     transition: font-size 0.3s ease; /* Změna velikosti písma při scrollování */
+    white-space: nowrap; /* Zabraňuje zalamování textu */
 }
 
 .header.scrolled h1 {
