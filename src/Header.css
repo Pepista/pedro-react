@@ -32,9 +32,10 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox pro horizontální uspořádání */
+    justify-content: space-between; /* Nadpis vlevo, navigace vpravo */
+    align-items: center; /* Zarovná elementy na střed vertikálně */
+    gap: 20px; /* Mezera mezi nadpisem a navigací */
 }
 
 /* Název webu */
@@ -52,6 +53,7 @@ body {
 
 /* Navigace */
 .nav {
+    margin-left: auto; /* Posune navigaci doprava */
     display: flex;
     transition: transform 0.3s ease; /* Efekt pro navigační lištu */
 }
@@ -61,10 +63,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
+    gap: 30px; /* Stejná mezera mezi odkazy */
 }
 
 .nav-links a {
@@ -109,16 +108,13 @@ html, body {
     }
 
     .nav {
+        justify-content: center; /* Centrovat navigaci */
         flex-direction: column; /* Navigace se změní na vertikální */
         margin-top: 20px;
     }
 
-    .nav-links li {
-        margin: 10px 0; /* Větší mezery mezi odkazy */
-    }
-
-    .nav-links a {
-        font-size: 1.2rem; /* Zvětšení písma pro odkazy */
+    .nav-links {
+        gap: 20px; /* Mezery mezi odkazy na tabletu */
     }
 }
 
@@ -133,16 +129,12 @@ html, body {
         font-size: 1.8rem; /* Zmenšení fontu pro nadpis */
     }
 
-    .nav-links a {
-        font-size: 1.1rem; /* Zmenšení písma pro odkazy */
+    .nav-links {
+        gap: 15px; /* Mezery mezi odkazy na mobilu */
     }
 
     .header {
         padding: 15px 0; /* Zmenšení paddingu headeru na mobilech */
-    }
-
-    .nav-links li {
-        margin: 8px 0; /* Zmenšení mezer mezi odkazy */
     }
 }
 
@@ -152,7 +144,7 @@ html, body {
         font-size: 1.5rem; /* Další zmenšení fontu pro extra malé obrazovky */
     }
 
-    .nav-links a {
-        font-size: 1rem; /* Menší písmo pro odkazy */
+    .nav-links {
+        gap: 10px; /* Menší mezery mezi odkazy */
     }
 }

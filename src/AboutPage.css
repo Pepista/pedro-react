@@ -57,6 +57,7 @@
 /* Tablet a menší zařízení (max-width: 768px) */
 @media (max-width: 768px) {
     .about-container {
+        margin-top: 520px;
         flex-direction: column;
         align-items: center;
         padding-top: 50px; /* Ujistíme se, že je mezera mezi textem a vrchem obrazovky */
@@ -78,6 +79,7 @@
 @media (max-width: 480px) {
     .about-content h1 {
         font-size: 2rem;
+        margin-top: 150px;
     }
 
     .about-content p {
